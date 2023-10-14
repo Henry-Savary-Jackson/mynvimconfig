@@ -1,0 +1,2 @@
+[INFO  Sat 14 Oct 2023 15:41:20 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=lua-language-server) {}
+[INFO  Sat 14 Oct 2023 15:41:23 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=lua-language-server)
