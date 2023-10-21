@@ -5924,7 +5924,7 @@
       "LSP"
     ],
     "source": {
-      "id": "pkg:cargo/neocmakelsp@0.6.9"
+      "id": "pkg:cargo/neocmakelsp@0.6.10"
     },
     "bin": {
       "neocmakelsp": "cargo:neocmakelsp"
@@ -8444,7 +8444,7 @@
       "Compiler"
     ],
     "source": {
-      "id": "pkg:github/shader-slang/slang@v2023.4.0",
+      "id": "pkg:github/shader-slang/slang@v2023.4.1",
       "asset": [
         {
           "target": "linux_x64_gnu",
@@ -8868,7 +8868,7 @@
       "LSP"
     ],
     "source": {
-      "id": "pkg:gem/sorbet@0.5.11081",
+      "id": "pkg:gem/sorbet@0.5.11088",
       "supported_platforms": [
         "unix"
       ]
@@ -8984,7 +8984,7 @@
       "Formatter"
     ],
     "source": {
-      "id": "pkg:pypi/shandy-sqlfmt@0.20.0?extra=jinjafmt"
+      "id": "pkg:pypi/shandy-sqlfmt@0.21.0?extra=jinjafmt"
     },
     "bin": {
       "sqlfmt": "pypi:sqlfmt"
@@ -9983,7 +9983,7 @@
       "LSP"
     ],
     "source": {
-      "id": "pkg:npm/typescript-language-server@3.3.2",
+      "id": "pkg:npm/typescript-language-server@4.0.0",
       "extra_packages": [
         "typescript"
       ]

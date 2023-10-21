@@ -1,0 +1,1 @@
+{"secondary_sources":[],"schema_version":"1.1","name":"mypy","primary_source":{"id":"pkg:pypi\/mypy@1.6.1","type":"registry+v1"},"metrics":{"start_time":1697887997757,"completion_time":1697888018289},"links":{"share":{},"bin":{"mypy":"venv\/bin\/mypy"},"opt":{}}}

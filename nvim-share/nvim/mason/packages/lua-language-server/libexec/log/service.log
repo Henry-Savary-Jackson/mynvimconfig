@@ -1,9 +1,9 @@
-[22:54:57.086][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:66]: Lua Lsp startup, root: 	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec
-[22:54:57.086][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:67]: ROOT:	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec
-[22:54:57.086][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:68]: LOGPATH:	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/log
-[22:54:57.086][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:69]: METAPATH:	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/meta
-[22:54:57.087][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:70]: VERSION:	3.7.0
-[22:54:57.156][info] [#0:script/service/service.lua:144]: 
+[13:32:22.642][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:66]: Lua Lsp startup, root: 	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec
+[13:32:22.642][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:67]: ROOT:	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec
+[13:32:22.642][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:68]: LOGPATH:	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/log
+[13:32:22.642][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:69]: METAPATH:	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/meta
+[13:32:22.642][info] [#0:/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/main.lua:70]: VERSION:	3.7.0
+[13:32:22.706][info] [#0:script/service/service.lua:144]: 
 ========= Medical Examination Report =========
     --------------- Memory ---------------
         Total: 2.142 MB
@@ -25,7 +25,7 @@
         Holdon:   0
         Waiting:  0
 ==============================================
-[22:54:57.166][info] [#0:script/client.lua:657]: Client init	{
+[13:32:22.715][info] [#0:script/client.lua:657]: Client init	{
   capabilities = {
     textDocument = {
       callHierarchy = {
@@ -177,7 +177,7 @@
     version = "0.9.4"
   },
   initializationOptions = {},
-  processId = 10518,
+  processId = 15316,
   rootPath = "/home/themule/mynvimconfig/nvim-config/nvim",
   rootUri = "file:///home/themule/mynvimconfig/nvim-config/nvim",
   trace = "off",
@@ -186,7 +186,7 @@
       uri = "file:///home/themule/mynvimconfig/nvim-config/nvim"
     } }
 }
-[22:54:57.166][info] [#0:script/language.lua:137]: VSC language: nil
-[22:54:57.166][info] [#0:script/language.lua:138]: LS  language: en-us
-[22:54:57.166][info] [#0:script/workspace/workspace.lua:38]: Workspace init root: 	file:///home/themule/mynvimconfig/nvim-config/nvim
-[22:54:57.171][info] [#0:script/workspace/workspace.lua:42]: Log path: 	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/log/file_home_themule_mynvimconfig_nvim-config_nvim.log
+[13:32:22.715][info] [#0:script/language.lua:137]: VSC language: nil
+[13:32:22.715][info] [#0:script/language.lua:138]: LS  language: en-us
+[13:32:22.715][info] [#0:script/workspace/workspace.lua:38]: Workspace init root: 	file:///home/themule/mynvimconfig/nvim-config/nvim
+[13:32:22.715][info] [#0:script/workspace/workspace.lua:42]: Log path: 	/home/themule/mynvimconfig/nvim-share/nvim/mason/packages/lua-language-server/libexec/log/file_home_themule_mynvimconfig_nvim-config_nvim.log

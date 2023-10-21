@@ -76,3 +76,17 @@
 [INFO  Fri 20 Oct 2023 22:52:46 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=jdtls) {}
 [INFO  Fri 20 Oct 2023 22:53:18 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=jdtls)
 [INFO  Fri 20 Oct 2023 22:53:34 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=json-lsp)
+[INFO  Sat 21 Oct 2023 13:22:12 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=lua-language-server) {}
+[INFO  Sat 21 Oct 2023 13:22:16 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=lua-language-server)
+[INFO  Sat 21 Oct 2023 13:33:16 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=black) {}
+[INFO  Sat 21 Oct 2023 13:33:16 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=debugpy) {}
+[INFO  Sat 21 Oct 2023 13:33:16 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=mypy) {}
+[INFO  Sat 21 Oct 2023 13:33:16 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=ruff) {}
+[INFO  Sat 21 Oct 2023 13:33:16 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=pyright) {}
+[INFO  Sat 21 Oct 2023 13:33:35 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=black)
+[INFO  Sat 21 Oct 2023 13:33:36 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=ruff)
+[INFO  Sat 21 Oct 2023 13:33:37 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=debugpy)
+[INFO  Sat 21 Oct 2023 13:33:38 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=mypy)
+[INFO  Sat 21 Oct 2023 13:33:45 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=pyright)
+[INFO  Sat 21 Oct 2023 13:34:01 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:184: Executing installer for Package(name=pylint) {}
+[INFO  Sat 21 Oct 2023 13:34:11 SAST] ...e/nvim/lazy/mason.nvim/lua/mason-core/installer/init.lua:245: Installation succeeded for Package(name=pylint)
