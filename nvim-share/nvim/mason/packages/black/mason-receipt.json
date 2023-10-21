@@ -1,1 +1,0 @@
-{"secondary_sources":[],"schema_version":"1.1","name":"black","primary_source":{"id":"pkg:pypi\/black@23.10.0","type":"registry+v1"},"metrics":{"start_time":1697887997496,"completion_time":1697888015627},"links":{"share":{},"bin":{"black":"venv\/bin\/black"},"opt":{}}}
