@@ -14,6 +14,6 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 echo "Now putting config... "
 
 if [ ! -d "$HOME/.config/nvim" ]; then
-	rm -rf ~/.config/nvim
+	rm -rf $HOME/.config/nvim
 fi
 ln -sf $(pwd)/nvim-config/nvim ~/.config/
