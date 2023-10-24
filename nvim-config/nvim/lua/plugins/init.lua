@@ -148,7 +148,8 @@ local default_plugins = {
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+   -- event = "InsertEnter",
+    ft = { "c", "cpp", "py", "lua", "sh", "h"},
     dependencies = {
       {
         -- snippet plugin
