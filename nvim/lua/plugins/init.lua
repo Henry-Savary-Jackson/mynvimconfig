@@ -148,8 +148,7 @@ local default_plugins = {
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
-   -- event = "InsertEnter",
-    ft = { "c", "cpp", "py", "lua", "sh", "h"},
+    event = "InsertEnter",
     dependencies = {
       {
         -- snippet plugin
@@ -253,7 +252,7 @@ local default_plugins = {
   -- Only load whichkey after all the gui
   {
     "folke/which-key.nvim",
-    keys = { "<leader>", "<c-r>", '"', "'", "`", "c", "v", "g" },
+    keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "v", "g" },
     init = function()
       require("core.utils").load_mappings "whichkey"
     end,

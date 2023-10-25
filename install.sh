@@ -26,4 +26,4 @@ echo "Now putting config... "
 if [ ! -a "$HOME/.config/nvim" ]; then
 	rm -rf $HOME/.config/nvim
 fi
-ln -sf $(pwd)/nvim-config/nvim ~/.config/
+ln -sf $(pwd)/nvim ~/.config/
