@@ -31,7 +31,7 @@ local function get_jdtls_paths()
     .get_package('jdtls')
     :get_install_path()
 
-  path.java_agent = jdtls_install .. '/lombok-1.18.30.jar'
+  path.java_agent = jdtls_install .. '/lombok.jar'
   path.launcher_jar = vim.fn.glob(jdtls_install .. '/plugins/org.eclipse.equinox.launcher_*.jar')
 
   if vim.fn.has('mac') == 1 then
