@@ -1,8 +1,11 @@
 local plugins = {
   {'mfussenegger/nvim-jdtls'
-  , ft = {"java"}
+  , ft = {"java"},
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    }
   },
-{'VonHeikemen/lsp-zero.nvim',}, 
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
@@ -42,7 +45,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"python"},
+event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -55,6 +58,11 @@ local plugins = {
         "debugpy",
         "mypy",
         "ruff",
+        "clangd",
+        "codelldb",
+        "clang-format",
+        "java-debug-adapter",
+        "java-test",
         "pyright",
       },
     },

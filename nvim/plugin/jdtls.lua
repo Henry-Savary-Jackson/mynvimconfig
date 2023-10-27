@@ -11,7 +11,7 @@ local root_files = {
 
 local features = {
   -- change this to `true` to enable codelens
-  codelens = false,
+  codelens = true,
 
   -- change this to `true` if you have `nvim-dap`,
   -- `java-test` and `java-debug-adapter` installed
@@ -56,9 +56,7 @@ local function get_jdtls_paths()
     '\n'
   )
 
-  if java_test_bundle[1] ~= '' then
-    vim.list_extend(path.bundles, java_test_bundle)
-  end
+vim.list_extend(path.bundles, java_test_bundle)
 
   ---
   -- Include java-debug-adapter bundle if present
