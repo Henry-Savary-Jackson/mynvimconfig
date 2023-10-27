@@ -2,7 +2,8 @@ local M = {
   "neoclide/coc.nvim",
   branch = "master",
   lazy = false,
-  build = "npm ci"
+  build = "npm ci",
+  enabled = false
 }
 
 M.config = function()

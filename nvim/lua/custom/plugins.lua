@@ -1,5 +1,5 @@
 local plugins = {
-  require('custom.configs.cocconfig'),
+  {'mfussenegger/nvim-jdtls'},
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
@@ -56,6 +56,7 @@ local plugins = {
       },
     },
   },
+  { "rcarriga/cmp-dap"},
   {
     "neovim/nvim-lspconfig",
     config = function()

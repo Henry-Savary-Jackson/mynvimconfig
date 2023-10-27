@@ -122,7 +122,6 @@ local default_plugins = {
     opts = function()
       return require "plugins.configs.mason"
     end,
-enabled = false,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "mason")
       require("mason").setup(opts)
@@ -138,7 +137,6 @@ enabled = false,
 
   {
     "neovim/nvim-lspconfig",
-    enabled = false,
     init = function()
       require("core.utils").lazy_load "nvim-lspconfig"
     end,
@@ -150,7 +148,6 @@ enabled = false,
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
-    enabled = false,
     event = "InsertEnter",
     dependencies = {
       {
