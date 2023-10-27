@@ -6,9 +6,28 @@ local plugins = {
       "rcarriga/nvim-dap-ui",
     }
   },
+{'clangd/clangd'
+  , ft = {"c", "cpp", "h"},
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    }
+  },
+{
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {}
+    },
+  },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
+  event = "VeryLazy",
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
