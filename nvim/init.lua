@@ -21,3 +21,5 @@ vim.opt.rtp:prepend(lazypath)
 require "plugins"
 
 vim.wo.relativenumber = true
+
+

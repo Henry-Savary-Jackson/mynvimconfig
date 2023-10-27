@@ -1,5 +1,8 @@
 local plugins = {
-  {'mfussenegger/nvim-jdtls'},
+  {'mfussenegger/nvim-jdtls'
+  , ft = {"java"}
+  },
+{'VonHeikemen/lsp-zero.nvim',}, 
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
