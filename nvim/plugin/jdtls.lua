@@ -47,10 +47,7 @@ local function get_jdtls_paths()
   ---
   -- Include java-test bundle if present
   ---
-  local java_test_path = require('mason-registry')
-    .get_package('java-test')
-    :get_install_path()
-
+  local java_test_path = os.getenv("HOME") .. "~/mynvimconfig/vscode-java-test/server/*.jar";
   local java_test_bundle = vim.split(
     vim.fn.glob(java_test_path .. '/extension/server/*.jar'),
     '\n'

@@ -1,4 +1,6 @@
 local plugins = {
+  {'Henry-Savary-Jackson/mynvimhttpconfig',
+  ft = {"http"},},
   {'mfussenegger/nvim-jdtls'
   , ft = {"java"},
     dependencies = {
