@@ -1,4 +1,5 @@
 #!/bin/sh
+
 if [ "$HOME/mynvimconfig" != "$PWD" ]; then
   echo "nvimconfig installed in wrong directory!"
   exit 1
