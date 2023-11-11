@@ -3,8 +3,19 @@ local M = {}
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
+    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"},
+ 
+    ["<leader>dc"] = {"<cmd> DapContinue <CR>"},
+
+    ["<leader>dsi"] = {"<cmd> DapStepInto <CR>"},
+
+    ["<leader>dso"] = {"<cmd> DapStepOver <CR>"},
+    
+    ["<leader>dsu"] = {"<cmd> DapStepOut <CR>"},
+
+    ["<leader>dt"] = {"<cmd> DapTerminate <CR>"},
   }
+
 }
 
 M.dap_python = {
