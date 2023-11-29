@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if [ "$HOME/mynvimconfig" != "$PWD" ]; then
-  echo "nvimconfig installed in wrong directory!"
+dir_name=$(echo $PWD | sed -E 's|(.*?)/(.*$)|\2|')
+
+if [ "$HOME/$dir_name" != "$PWD" ]; then
+  echo "neovim config installed in wrong directory!"
   exit 1
 fi
 

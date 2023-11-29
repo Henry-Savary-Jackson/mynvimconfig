@@ -42,35 +42,24 @@ local function get_jdtls_paths()
     path.platform_config = jdtls_install .. '/config_win'
   end
 
-  path.bundles = {}
+
+-- NOTE: for debugging
+-- git clone git@github.com:microsoft/java-debug.git ~/.config/lvim/.java-debug
+-- cd ~/.config/lvim/.java-debug/
+-- ./mvnw clean install
+-- OR use Mason to install, here I use Mason
+bundles = vim.fn.glob(os.getenv("HOME") .. "/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar", true, true)
+
+-- NOTE: for testing
+-- git clone git@github.com:microsoft/vscode-java-test.git ~/.config/lvim/.vscode-java-test
+-- cd ~/.config/lvim/vscode-java-test
+-- npm install
+-- npm run build-plugin
+-- Or use Mason to install, here I use Mason
+local extra_bundles = vim.fn.glob(os.getenv("HOME") .. "~/mynvimconfig/vscode-java-test/server/*.jar", true, true)
+vim.list_extend(bundles, extra_bundles)
 
   ---
-  -- Include java-test bundle if present
-  ---
-  local java_test_path = os.getenv("HOME") .. "~/mynvimconfig/vscode-java-test/server/*.jar";
-  local java_test_bundle = vim.split(
-    vim.fn.glob(java_test_path .. '/extension/server/*.jar'),
-    '\n'
-  )
-
-vim.list_extend(path.bundles, java_test_bundle)
-
-  ---
-  -- Include java-debug-adapter bundle if present
-  ---
-  local java_debug_path = require('mason-registry')
-    .get_package('java-debug-adapter')
-    :get_install_path()
-
-  local java_debug_bundle = vim.split(
-    vim.fn.glob(java_debug_path .. '/extension/server/com.microsoft.java.debug.plugin-*.jar'),
-    '\n'
-  )
-
-  if java_debug_bundle[1] ~= '' then
-    vim.list_extend(path.bundles, java_debug_bundle)
-  end
-
   ---
   -- Useful if you're starting jdtls with a Java version that's 
   -- different from the one the project uses.
@@ -88,7 +77,11 @@ vim.list_extend(path.bundles, java_test_bundle)
     -- {
     --   name = 'JavaSE-18',
     --   path = vim.fn.expand('~/.sdkman/candidates/java/18.0.2-amzn'),
-    -- },
+    -- }
+    {
+       name = 'JavaSE-17',
+      path = vim.fn.expand('/usr/lib/jvm/default-runtime'),
+     }
   }
 
   cache_vars.paths = path
@@ -267,7 +260,7 @@ local function jdtls_setup(event)
       allow_incremental_sync = true,
     },
     init_options = {
-      bundles = path.bundles,
+      bundles = bundles,
     },
   })
 end

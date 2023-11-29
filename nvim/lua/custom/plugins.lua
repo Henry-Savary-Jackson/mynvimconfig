@@ -1,5 +1,6 @@
 local plugins = {
   {"lambdalisue/suda.vim", lazy = false},
+  { 'arjunmahishi/flow.nvim', lazy =false},
   {
    "rest-nvim/rest.nvim",
     ft = "http",
