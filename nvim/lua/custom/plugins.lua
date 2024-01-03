@@ -1,4 +1,22 @@
 local plugins = {
+  { "lervag/vimtex", lazy=false},
+    {
+      "microsoft/vscode-js-debug",
+      build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+    },
+    {
+      "mxsdev/nvim-dap-vscode-js",
+      opts = {
+        debugger_path = vim.fn.stdpath "data" .. "/lazy/vscode-js-debug",
+        adapters = { "pwa-node", "pwa-chrome" },
+      },
+    }  ,{
+    "mfussenegger/nvim-lint",
+    event= "VeryLazy",
+    config = function ()
+      require("custom.configs.lint")
+    end
+  },
   {"lambdalisue/suda.vim", lazy = false},
   { 'arjunmahishi/flow.nvim', lazy =false},
   {
@@ -94,6 +112,7 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
+      require("custom.configs.dap")
       require("core.utils").load_mappings("dap")
     end
   },
@@ -121,6 +140,11 @@ event = "VeryLazy",
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "js-debug-adapter",
+        "eslint-lsp",
+        "html-lsp",
+        "css-lsp",
+        "typescript-language-server",
         "black",
         "debugpy",
         "mypy",

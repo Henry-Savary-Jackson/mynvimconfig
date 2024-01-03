@@ -23,3 +23,5 @@ require "plugins"
 vim.wo.relativenumber = true
 vim.g.python3_host_prog = "~/mynvimconfig/venv/bin/python3"
 vim.g.loaded_python3_provider =1
+
+vim.g.vimtex_view_method = 'zathura'
