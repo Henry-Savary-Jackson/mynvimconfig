@@ -1,4 +1,14 @@
 local plugins = {
+
+  {
+  "iamcco/markdown-preview.nvim",
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  build = "cd app && yarn install",
+  init = function()
+    vim.g.mkdp_filetypes = { "markdown" }
+  end,
+  ft = { "markdown" },
+},
   { "lervag/vimtex", lazy=false},
     {
       "microsoft/vscode-js-debug",
