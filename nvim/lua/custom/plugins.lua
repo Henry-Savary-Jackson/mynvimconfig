@@ -1,5 +1,7 @@
 local plugins = {
-
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'},
+ {"AckslD/swenv.nvim", lazy = false ,ft = { "py"}},
+  {"stevearc/dressing.nvim", lazy = false , ft = { "py"}},
   {
   "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
