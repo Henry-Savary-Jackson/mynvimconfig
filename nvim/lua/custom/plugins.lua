@@ -1,7 +1,24 @@
 local plugins = {
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'},
- {"AckslD/swenv.nvim", lazy = false ,ft = { "py"}},
-  {"stevearc/dressing.nvim", lazy = false , ft = { "py"}},
+{
+  'linux-cultist/venv-selector.nvim',
+  dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap','mfussenegger/nvim-dap-python', "microsoft/debugpy" },
+  opts = {
+    -- Your options go here
+    -- name = "venv",
+    parents= 1,
+    dap_enabled = true,
+    auto_refresh = true,
+    anaconda_base_path  = "~/.virtualenvs",
+    anaconda_envs_path  = "~/.virtualenvs"
+  },
+ event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+  keys = {
+    -- Keymap to open VenvSelector to pick a venv.
+    { '<leader>psv', '<cmd>VenvSelect<cr>' },
+    -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+    { '<leader>psc', '<cmd>VenvSelectCached<cr>' },
+  },
+},
   {
   "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

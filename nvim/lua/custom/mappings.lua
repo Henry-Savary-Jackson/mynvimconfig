@@ -21,6 +21,11 @@ M.dap = {
 M.dap_python = {
   plugin = true,
   n = {
+    ["<leader>dse"] = {
+      function()
+        require('dap-python').setup(os.getenv("VIRTUAL_ENV") .."/bin/python" )
+      end
+    },
     ["<leader>dpr"] = {
       function()
         require('dap-python').test_method()

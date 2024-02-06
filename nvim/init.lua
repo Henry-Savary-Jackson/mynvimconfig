@@ -24,4 +24,16 @@ vim.wo.relativenumber = true
 vim.g.python3_host_prog = "~/mynvimconfig/venv/bin/python3"
 vim.g.loaded_python3_provider =1
 
+local venv_selector = require("venv-selector")
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  desc = 'Auto select virtualenv Nvim open',
+  pattern = '*.py',
+  callback = function()
+      venv_selector.retrieve_from_cache()
+      require('dap-python').setup(os.getenv("VIRTUAL_ENV") .."/bin/python" )
+  end,
+  once = true,
+})
+-- require('dap-python').setup(masonpath .. 'packages/debugpy/venv/bin/python')
 vim.g.vimtex_view_method = 'zathura'
