@@ -3,19 +3,18 @@ local M = {}
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"},
- 
-    ["<leader>dc"] = {"<cmd> DapContinue <CR>"},
+    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>" },
 
-    ["<leader>dsi"] = {"<cmd> DapStepInto <CR>"},
+    ["<leader>dc"] = { "<cmd> DapContinue <CR>" },
 
-    ["<leader>dso"] = {"<cmd> DapStepOver <CR>"},
-    
-    ["<leader>dsu"] = {"<cmd> DapStepOut <CR>"},
+    ["<leader>dsi"] = { "<cmd> DapStepInto <CR>" },
 
-    ["<leader>dt"] = {"<cmd> DapTerminate <CR>"},
-  }
+    ["<leader>dso"] = { "<cmd> DapStepOver <CR>" },
 
+    ["<leader>dsu"] = { "<cmd> DapStepOut <CR>" },
+
+    ["<leader>dt"] = { "<cmd> DapTerminate <CR>" },
+  },
 }
 
 M.dap_python = {
@@ -23,15 +22,15 @@ M.dap_python = {
   n = {
     ["<leader>dse"] = {
       function()
-        require('dap-python').setup(os.getenv("VIRTUAL_ENV") .."/bin/python" )
-      end
+        require("dap-python").setup(os.getenv "VIRTUAL_ENV" .. "/bin/python")
+      end,
     },
     ["<leader>dpr"] = {
       function()
-        require('dap-python').test_method()
-      end
-    }
-  }
+        require("dap-python").test_method()
+      end,
+    },
+  },
 }
 
 return M

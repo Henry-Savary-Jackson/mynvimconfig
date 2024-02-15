@@ -5,6 +5,8 @@ local capabilities = config.capabilities
 
 local lspconfig = require("lspconfig")
 
+lspconfig.ltex.setup {
+}
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -29,3 +31,5 @@ lspconfig.tsserver.setup{
     }
   }
 }
+
+lspconfig.sqlls.setup{}

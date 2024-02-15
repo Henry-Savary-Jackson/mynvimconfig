@@ -1,114 +1,124 @@
 local plugins = {
-{
-  'linux-cultist/venv-selector.nvim',
-  dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap','mfussenegger/nvim-dap-python', "microsoft/debugpy" },
-  opts = {
-    -- Your options go here
-    -- name = "venv",
-    parents= 1,
-    dap_enabled = true,
-    auto_refresh = true,
-    anaconda_base_path  = "~/.virtualenvs",
-    anaconda_envs_path  = "~/.virtualenvs"
-  },
- event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-  keys = {
-    -- Keymap to open VenvSelector to pick a venv.
-    { '<leader>psv', '<cmd>VenvSelect<cr>' },
-    -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-    { '<leader>psc', '<cmd>VenvSelectCached<cr>' },
-  },
-},
-  {
-  "iamcco/markdown-preview.nvim",
-  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  build = "cd app && yarn install",
-  init = function()
-    vim.g.mkdp_filetypes = { "markdown" }
-  end,
-  ft = { "markdown" },
-},
-  { "lervag/vimtex", lazy=false},
-    {
-      "microsoft/vscode-js-debug",
-      build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-    },
-    {
-      "mxsdev/nvim-dap-vscode-js",
-      opts = {
-        debugger_path = vim.fn.stdpath "data" .. "/lazy/vscode-js-debug",
-        adapters = { "pwa-node", "pwa-chrome" },
-      },
-    }  ,{
-    "mfussenegger/nvim-lint",
-    event= "VeryLazy",
-    config = function ()
-      require("custom.configs.lint")
-    end
-  },
-  {"lambdalisue/suda.vim", lazy = false},
-  { 'arjunmahishi/flow.nvim', lazy =false},
-  {
-   "rest-nvim/rest.nvim",
-    ft = "http",
-   dependencies = { { "nvim-lua/plenary.nvim" } },
-   config = function()
-     require("rest-nvim").setup({
-         -- Open request results in a horizontal split
-      result_split_horizontal = false,
-      -- Keep the http file buffer above|left when split horizontal|vertical
-      result_split_in_place = false,
-      -- Skip SSL verification, useful for unknown certificates
-      skip_ssl_verification = false,
-      -- Encode URL before making request
-      encode_url = true,
-      -- Highlight request on run
-      highlight = {
-        enabled = true,
-        timeout = 150,
-      },
-      result = {
-        -- toggle showing URL, HTTP info, headers at top the of result window
-        show_url = true,
-        -- show the generated curl command in case you want to launch
-        -- the same request via the terminal (can be verbose)
-        show_curl_command = false,
-        show_http_info = true,
-        show_headers = true,
-        -- executables or functions for formatting response body [optional]
-        -- set them to false if you want to disable them
-        formatters = {
-          json = "jq",
-          html = function(body)
-            return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
-          end
-        },
-      },
-      -- Jump to request line on run
-      jump_to_request = false,
-      env_file = '.env',
-      custom_dynamic_variables = {},
-      yank_dry_run = true,
-    })
-    vim.api.nvim_create_user_command('RestSend', "lua require('rest-nvim').run()", {})
-  end
-},
 
-  {'mfussenegger/nvim-jdtls'
-  , ft = {"java"},
+  {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-telescope/telescope.nvim",
+      "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap-python",
+      "microsoft/debugpy",
+    },
+    opts = {
+      -- Your options go here
+      -- name = "venv",
+      parents = 1,
+      dap_enabled = true,
+      auto_refresh = true,
+      anaconda_base_path = "~/.virtualenvs",
+      anaconda_envs_path = "~/.virtualenvs",
+    },
+    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    keys = {
+      -- Keymap to open VenvSelector to pick a venv.
+      { "<leader>psv", "<cmd>VenvSelect<cr>" },
+      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+      { "<leader>psc", "<cmd>VenvSelectCached<cr>" },
+    },
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  { "lervag/vimtex", lazy = false },
+  {
+    "microsoft/vscode-js-debug",
+    build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+  },
+  {
+    "mxsdev/nvim-dap-vscode-js",
+    opts = {
+      debugger_path = vim.fn.stdpath "data" .. "/lazy/vscode-js-debug",
+      adapters = { "pwa-node", "pwa-chrome" },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.lint"
+    end,
+  },
+  { "lambdalisue/suda.vim", lazy = false },
+  { "arjunmahishi/flow.nvim", lazy = false },
+  {
+    "rest-nvim/rest.nvim",
+    ft = "http",
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("rest-nvim").setup {
+        -- Open request results in a horizontal split
+        result_split_horizontal = false,
+        -- Keep the http file buffer above|left when split horizontal|vertical
+        result_split_in_place = false,
+        -- Skip SSL verification, useful for unknown certificates
+        skip_ssl_verification = false,
+        -- Encode URL before making request
+        encode_url = true,
+        -- Highlight request on run
+        highlight = {
+          enabled = true,
+          timeout = 150,
+        },
+        result = {
+          -- toggle showing URL, HTTP info, headers at top the of result window
+          show_url = true,
+          -- show the generated curl command in case you want to launch
+          -- the same request via the terminal (can be verbose)
+          show_curl_command = false,
+          show_http_info = true,
+          show_headers = true,
+          -- executables or functions for formatting response body [optional]
+          -- set them to false if you want to disable them
+          formatters = {
+            json = "jq",
+            html = function(body)
+              return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
+            end,
+          },
+        },
+        -- Jump to request line on run
+        jump_to_request = false,
+        env_file = ".env",
+        custom_dynamic_variables = {},
+        yank_dry_run = true,
+      }
+      vim.api.nvim_create_user_command("RestSend", "lua require('rest-nvim').run()", {})
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-jdtls",
+    ft = { "java" },
     dependencies = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
-    }
+    },
   },
-{'clangd/clangd'
-  , ft = {"c", "cpp", "h"},
+  {
+    "clangd/clangd",
+    ft = { "c", "cpp", "h" },
     dependencies = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
-    }
+    },
   },
-{
+  {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -116,16 +126,16 @@ local plugins = {
       "mfussenegger/nvim-dap",
     },
     opts = {
-      handlers = {}
+      handlers = {},
     },
   },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
-  event = "VeryLazy",
+    event = "VeryLazy",
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
       dapui.setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -136,14 +146,14 @@ local plugins = {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-    end
+    end,
   },
   {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
-      require("custom.configs.dap")
-      require("core.utils").load_mappings("dap")
-    end
+      require "custom.configs.dap"
+      require("core.utils").load_mappings "dap"
+    end,
   },
   {
     "mfussenegger/nvim-dap-python",
@@ -155,12 +165,12 @@ local plugins = {
     config = function(_, opts)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
-      require("core.utils").load_mappings("dap_python")
+      require("core.utils").load_mappings "dap_python"
     end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-event = "VeryLazy",
+    event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -169,6 +179,8 @@ event = "VeryLazy",
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "stylua",
+        "standardjs",
         "js-debug-adapter",
         "eslint-lsp",
         "html-lsp",
@@ -185,10 +197,12 @@ event = "VeryLazy",
         "java-test",
         "pyright",
         "jdtls",
+        "sqlls",
+        "ltex-ls",
       },
     },
   },
-  { "rcarriga/cmp-dap"},
+  { "rcarriga/cmp-dap" },
   {
     "neovim/nvim-lspconfig",
     config = function()
