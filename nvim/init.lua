@@ -1,5 +1,6 @@
 require "core"
-
+vim.g.python3_host_prog = "~/mynvimconfig/venv/bin/python3"
+vim.g.loaded_python3_provider = 1
 local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
 if custom_init_path then
@@ -21,9 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 require "plugins"
 
 vim.wo.relativenumber = true
-vim.g.python3_host_prog = "~/mynvimconfig/venv/bin/python3"
-vim.g.loaded_python3_provider = 1
-
 local venv_selector = require "venv-selector"
 
 vim.api.nvim_create_autocmd("VimEnter", {
@@ -38,25 +36,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
 })
 
-local ls = require "luasnip"
+vim.g.UltiSnipsExpandTrigger = "<tab>"
 
-ls.add_snippets("tex", {
-  ls.parser.parse_snippet("inf", "\\infty"),
-  ls.parser.parse_snippet("frac", "\\frac{$1}{$2}"),
+vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
 
-  -- trig
+vim.g.UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-  -- angles
-  ls.parser.parse_snippet("theta", "\\theta"),
-  ls.parser.parse_snippet("omega", "\\omega"),
-  ls.parser.parse_snippet("alpha", "\\alpha"),
-  ls.parser.parse_snippet("beta", "\\beta"),
-  ls.parser.parse_snippet("ang", "\\ang"),
-
-  -- sets
-  ls.parser.parse_snippet("eof", "\\"),
-  -- linear algebra
-  ls.parser.parse_snippet("vecn", "\\overrightarrow{$1}"),
-})
 -- require('dap-python').setup(masonpath .. 'packages/debugpy/venv/bin/python')
 vim.g.vimtex_view_method = "zathura"
