@@ -35,7 +35,7 @@ local plugins = {
     end,
     ft = { "markdown" },
   },
-  { "lervag/vimtex", lazy = false },
+  { "lervag/vimtex", ft = "tex" },
   {
     "microsoft/vscode-js-debug",
     build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
@@ -55,7 +55,6 @@ local plugins = {
     end,
   },
   { "lambdalisue/suda.vim", lazy = false },
-  { "arjunmahishi/flow.nvim", lazy = false },
   {
     "rest-nvim/rest.nvim",
     ft = "http",

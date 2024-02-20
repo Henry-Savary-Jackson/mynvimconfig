@@ -1,5 +1,12 @@
 #!/bin/sh
 
+echo installing python venv for neovim
+python -m venv venv
+
+source venv/bin/activate
+
+pip install pynvim
+
 dir_name=$(echo $PWD | sed -E 's|(.*?)/(.*$)|\2|')
 
 if [ "$HOME/$dir_name" != "$PWD" ]; then

@@ -1,9 +1,7 @@
 -- All plugins have lazy=true by default,to load a plugin on startup just lazy=false
 -- List of all default plugins & their definitions
 local default_plugins = {
-
   "nvim-lua/plenary.nvim",
-
   {
     "NvChad/base46",
     branch = "v2.0",
@@ -54,7 +52,6 @@ local default_plugins = {
       require("nvim-web-devicons").setup(opts)
     end,
   },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     version = "2.20.7",
@@ -159,7 +156,6 @@ local default_plugins = {
           require("plugins.configs.others").luasnip(opts)
         end,
       },
-
       -- autopairing of (){}[] etc
       {
         "windwp/nvim-autopairs",
