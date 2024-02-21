@@ -63,7 +63,8 @@ ls.add_snippets("tex", {
   s("cases", { t { "\\begin{cases}", " " }, i(1), t "&", i(2), t { " ", "\\end{cases}" } }),
 
   s("vec", { t "\\vec{", i(1), t "}" }),
+  s("dot", { t "\\cdot" }),
 
   s("_", { t "_{", i(1), t "}" }),
-  s("|", { t "|", i(1), t "|" }),
+  s("|", { t "\\vert", i(1), t "\\vert" }),
 })
