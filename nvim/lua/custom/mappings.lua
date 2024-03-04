@@ -30,6 +30,7 @@ M.dap_python = {
         require("dap-python").test_method()
       end,
     },
+    ["<leader>lspr"] = { "<cmd> LspRestart <CR>" },
   },
 }
 

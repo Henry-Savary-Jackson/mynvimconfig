@@ -20,6 +20,18 @@ local types = require "luasnip.util.types"
 local conds = require "luasnip.extras.expand_conditions"
 
 ls.add_snippets("tex", {
+
+  s("note-template", {
+    t {
+      "\\documentclass{article}",
+      "",
+      "\\usepackage{amsmath}",
+      "\\title{",
+    },
+    i(1),
+    t { "}", "\\author{Henry Savary-Jackson}", "", "\\begin{document}", "    \\maketitle", "", "\\end{document}" },
+  }),
+
   s("cos", { t "\\cos(", i(1), t ")" }),
   s("sin", { t "\\sin(", i(1), t ")" }),
   s("tan", { t "\\tan(", i(1), t ")" }),
@@ -27,11 +39,18 @@ ls.add_snippets("tex", {
   s("sec", { t "\\sec(", i(1), t ")" }),
   s("csc", { t "\\csc(", i(1), t ")" }),
 
+  s("delta", { t "\\delta" }),
+  s("theta", { t "\\theta" }),
+  s("alpha", { t "\\alpha" }),
+  s("pi", { t "\\pi" }),
+
+  s("implies", { t "\\iff" }),
   s("equiv", { t "\\equiv" }),
   s("<", { t "\\lt" }),
   s(">", { t "\\gt" }),
   s(">=", { t "\\ge" }),
   s("<=", { t "\\le" }),
+  s("!=", { t "\\ne" }),
 
   s("inf", { t "\\infty" }),
   s("Real", { t "\\Re" }),
@@ -50,21 +69,26 @@ ls.add_snippets("tex", {
   s("sum", { t "\\sum_{", i(1), t "}^{\\infty}" }),
   s("dx", { t "\\frac{", i(2), t "}{dx}" }),
 
+  s("log", { t "\\log_{", i(1), t "}", i(2) }),
+  s("ln", { t "\\ln_{", i(1), t "}" }),
   s("^", { t "^{", i(1), t "}" }),
-  s("root", { t "sqrt[", i(1), t "]{", i(2), t "}" }),
-  s("sqrt", { t "sqrt{", i(1), t "}" }),
+  s("root", { t "\\sqrt[", i(1), t "]{", i(2), t "}" }),
+  s("sqrt", { t "\\sqrt{", i(1), t "}" }),
   s("%", { t "\\mod" }),
   s("xx", { t "\\times" }),
-  s("frac", { t "\\frac{", i(1), t "}{", i(2), t "}" }),
+  s("ff", { t "\\frac{", i(1), t "}{", i(2), t "}" }),
 
-  s("dm", { t { "\\[", " " }, i(1), t { " ", "\\]" } }),
+  s("equs", { t { "\\begin{align}", " " }, i(1), t { " ", "\\end{align}" } }),
+  s("dm", { t { "\\begin{gather*}", " " }, i(1), t { " ", "\\end{gather*}" } }),
   s("im", { t "$", i(1), t "$" }),
 
   s("cases", { t { "\\begin{cases}", " " }, i(1), t "&", i(2), t { " ", "\\end{cases}" } }),
+  s("circ", { t "\\circ" }),
 
   s("vec", { t "\\vec{", i(1), t "}" }),
+  s("hat", { t "\\hat{", i(1), t "}" }),
   s("dot", { t "\\cdot" }),
 
   s("_", { t "_{", i(1), t "}" }),
-  s("|", { t "\\vert", i(1), t "\\vert" }),
+  s("|", { t "\\vert ", i(1), t " \\vert" }),
 })
