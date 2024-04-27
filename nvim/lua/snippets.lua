@@ -19,7 +19,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require "luasnip.util.types"
 local conds = require "luasnip.extras.expand_conditions"
 
-ls.add_snippets("tex", {
+ls.add_snippets({ "tex", "md" }, {
 
   s("note-template", {
     t {
